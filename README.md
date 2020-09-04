@@ -1,2 +1,2 @@
 # batch_101_assignments
-This Repository Conatins Solutions of Practice problems from Day 3 to Day 9 .
+This Repository Contains Solutions of Practice problems from Day 3 to Day 9 .
