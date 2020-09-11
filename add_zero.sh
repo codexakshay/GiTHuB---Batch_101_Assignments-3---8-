@@ -1,24 +1,21 @@
 #!/bin/bash -x
-while [ True ]
+array=(-4 -1 -1 0 1 2 3)
+i=0
+j=0
+k=0
+flag=0
+echo "Triplates Whose Sum Is Zero"
+for ((i=0;i<{#array[@]}-2;i++))
 do
-a=0
-while [ $a -lt 3 ]
+for ((j=$i+1;j<{#array[@]}-1;j++))
 do
-num=`shuf -i 1-5 -n 1`
-if [ $num -eq $((${arr[$a]})) ]
-then
-num=$(($num*-1))
-else
-num=$(($num-1))
-fi
-arr[((a))]=$num
-a=$(($a+1))
+for ((k=$j=1;k<{#array[@]};k++))
+do
+	if (( ${array[i]} + ${array[j]} + ${array[k]} == 0 ))
+	then
+		echo "[${array[i]},${array[j]},${array[k]}]"
+		flag=1
+	fi
 done
-echo ${arr[@]}
-sum=$((${arr[0]} + ${arr[1]} + ${arr[2]}))
-if [ $(($sum)) -eq 0 ]
-then
-	echo "SUM OF ${arr[@]} :  ZERO"
-	break;
-fi
+done
 done
